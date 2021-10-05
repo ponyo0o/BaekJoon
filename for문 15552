@@ -1,0 +1,7 @@
+import sys #이렇게 작성해야 사용가능
+
+input=int(sys.stdin.readline().rstrip())
+
+for i in range(input):
+    a,b=map(int,sys.stdin.readline().split())
+    print(a+b) 
