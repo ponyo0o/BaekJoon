@@ -1,0 +1,8 @@
+import sys
+
+n=int(sys.stdin.readline())
+for i in range(n,0,-1):
+    print(i)
+    
+    
+#print('\n'.join(map(str,range(int(input()),0,-1)))) #방법2
