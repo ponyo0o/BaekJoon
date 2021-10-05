@@ -1,0 +1,7 @@
+a=int(input())#472
+b=input()#385
+
+for i in b[::-1]:
+    c=a*int(i)
+    print(c)
+print(a*int(b))
