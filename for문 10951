@@ -1,0 +1,15 @@
+import sys      #벙법1
+
+while True:
+    try:
+        a,b=map(int,sys.stdin.readline().split())
+        print(a+b)
+    except:
+        break
+
+
+# import sys #방법 2
+
+# for line in sys.stdin:
+#     a, b = map(int, line.split())
+#     print(a + b)
