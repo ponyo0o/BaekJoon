@@ -1,0 +1,23 @@
+a=b=int(input())  #방법1
+count=0
+
+while True:
+    c=a//10
+    d=a%10
+    sum=c+d
+    count+=1
+    a=int(str(d)+str(sum%10))
+    if a==b:
+        break
+print(count)
+
+# a=int(input()) #방법2
+# b=a
+# count=0
+# while True:
+#     a=(a%10)*10 + (a//10 + a%10)%10
+#     count+=1
+#     if a==b:
+#         break
+# print(count)
+
