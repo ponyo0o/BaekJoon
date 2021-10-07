@@ -1,0 +1,21 @@
+import sys
+
+n=int(sys.stdin.readline())   #내가푼 방법
+a=list(map(int,sys.stdin.readline().split()))
+
+min=a[0]
+max=a[0]
+for i in range(n):
+    if min>=a[i]:
+        min=a[i]
+    elif max<a[i]:
+        max=a[i]
+print(min,max)
+
+# n=int(input())      #방법2
+# a=[int(i) for i in sys.stdin.readline().split()]
+# print(min(a),max(a))
+
+# n=int(input())     방법3
+# a=list(map(int,sys.stdin.readline().split()))
+# print(min(a),max(a))
