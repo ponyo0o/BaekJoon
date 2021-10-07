@@ -1,0 +1,26 @@
+import sys
+
+list=[]      #방법1
+for i in range(9):
+    a=int(sys.stdin.readline())
+    list.append(a)
+    #list.append(int(sys.stdin.readline())) 랑 같은것.
+print(max(list))
+print(list.index(max(list))+1)
+
+
+# num=0       #방법2
+# ind=0
+
+# for i in range(9):
+#     a=int(sys.stdin.readline())
+#     if a>num:
+#         num=a
+#         ind=i+1
+# print(num)
+# print(ind)
+
+
+# a=[int(sys.stdin.readline()) for i in range(9)]      #방법3
+# print(max(a))
+# print(a.index(max(a))+1)
