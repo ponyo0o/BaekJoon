@@ -1,0 +1,29 @@
+def d(n):         #방법1
+    a=[int(i) for i in str(n)]
+    num=n+sum(a)
+    #num=n+sum(map(int,str(n))) 와 같은것
+    return num
+    
+not_selfnumbers=[d(i) for i in range(1,10001)]
+
+for j in range(1,10001):
+    if j not in not_selfnumbers:
+        print(j)
+        
+        
+# def d(n):           #방법2 
+#     a=[int(i) for i in str(n)]   #n 과 n의 각 자리수를 더하는 함수
+#     num=n+sum(a)
+#     #num=n+sum(map(int,str(n)))
+#     return num
+
+# numbers=[]
+# for i in range(1,10001):
+#     numbers.append(i)
+
+# for i in range(len(numbers)):  #생산자가 있는 숫자들
+#     numbers[i]=d(i)
+
+# for i in range(1,10001):
+#     if i not in numbers: #셀프넘버 출력
+#         print(i)
