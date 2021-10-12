@@ -1,0 +1,32 @@
+def han(n):      #방법1
+    if n<100:
+        return n
+    else:
+        cnt=99
+        for i in range(100,n+1):
+            a=[int(j) for j in str(i)]
+            # a=list(map(int,str(i)))
+            if a[0]-a[1] == a[1]-a[2]:
+                cnt+=1
+        return cnt
+
+inp=int(input())
+Han=han(inp)
+print(Han)
+
+# def han(n):      #방법2
+#     if n<100:
+#         return n
+#     else:
+#         cnt=99
+#         for i in range(100,n+1):
+#             hund=i//100
+#             ten=(i%100)//10
+#             one=(i%100)%10
+#             if hund-ten == ten - one:
+#                 cnt+=1
+#         return cnt
+
+# inp=int(input())
+# Han=han(inp)
+# print(Han)
