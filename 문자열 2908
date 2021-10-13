@@ -1,0 +1,24 @@
+a,b=input().split() #내가푼것
+a=list(a)
+b=list(b)
+a.reverse()
+b.reverse()
+a=a[0]+a[1]+a[2]
+b=b[0]+b[1]+b[2]
+if a>b:
+    print(a)
+else:
+    print(b)
+
+
+# a,b=input().split()   #간단히 푸는방법
+# a=a[::-1]
+# b=b[::-1]
+# print(max([a,b]))
+
+
+# a,b=input().split()    #함수를 정의해서 푸는 방법
+# def reading(n):
+#     n=n[::-1]
+#     return n
+# print(max([reading(a),reading(b)]))
