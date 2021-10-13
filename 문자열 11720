@@ -1,0 +1,15 @@
+n=int(input()) #방법1
+a=sum(map(int,input()))
+print(a)
+
+n=int(input()) #방법2
+a=input()
+b=[int(i) for i in str(a)]
+print(sum(b))
+
+n=int(input()) #방법3
+a=input()
+b=0
+for i in str(a):
+    b+=int(i)
+print(b)
