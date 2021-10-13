@@ -1,0 +1,11 @@
+a=input().upper() #zZa
+b=list(set(a)) #Z,A
+cnt=[]  #2,1
+for i in b:  
+    c=a.count(i) #i=Z,A
+    cnt.append(c)
+
+if cnt.count(max(cnt))>=2:
+    print("?")
+else:
+    print(b[cnt.index(max(cnt))]) #max(cnt)=2 -> cnt.index(2)=0 ->b[0]=Z 
