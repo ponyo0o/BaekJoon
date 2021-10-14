@@ -14,3 +14,4 @@ print(result)
 #     if list(word) == sorted(word, key=word.find):
 #         result += 1
 # print(result)
+
