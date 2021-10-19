@@ -1,0 +1,16 @@
+def fibo(n):          #재귀함수
+    if n==0:
+        return 0 
+    elif n==1:
+        return 1
+    elif n>1:
+        return fibo(n-1)+fibo(n-2)
+
+print(fibo(int(input())))
+
+
+n = int(input())       #방법2
+a, b = 0, 1
+for i in range(n):
+    a, b = b, a+b
+print(a)
