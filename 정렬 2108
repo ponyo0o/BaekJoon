@@ -26,3 +26,20 @@ else:
 
 print(max(li)-min(li))   #범위
  
+ 
+ 
+ 
+li.sort()      #최빈값 그냥 작성한것
+s_li=list(set(li)) # -2 1 2 3 8
+s_li.sort()
+c_li=[] # 1 1 1 1 1 
+
+for i in s_li:
+    c_li.append(li.count(i))
+if len(li)>1:
+    if c_li.count(max(c_li))>=2:
+        print(s_li[c_li.index(max(c_li))+1])
+    else:
+        print(s_li[c_li.index(max(c_li))])
+else:
+    print(li[0])
