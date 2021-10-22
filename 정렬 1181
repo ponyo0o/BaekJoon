@@ -1,0 +1,14 @@
+import sys
+
+n=int(sys.stdin.readline())
+
+li=[]
+for i in range(n):
+    a=sys.stdin.readline().strip()
+    li.append((len(a),a))
+li=set(li)
+
+a=sorted(li,key= lambda x:(x[0],x[1]))
+
+for i in a:
+    print(i[1])
