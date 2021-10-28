@@ -1,0 +1,27 @@
+n,m=map(int,input().split())
+visited=[False]*(n+1)  #탐사여부를 확인하는 리스트
+stack=[]   #조건에 맞는 수를 저장하고 출력해줄 리스트
+
+def dfs(depth,n,m):
+    if depth==m:
+        print(*stack)
+        return
+    for i in range(1,n+1):
+        if not visited[i]:  #탐사안했다면(즉,False)
+            visited[i]=True #탐사 시작(중복을 제거 해주기위해)
+            stack.append(i) #탐사내용
+            dfs(depth+1,n,m) #깊이 우선 탐색
+            visited[i]=False  #깊이 탐사 완료
+            stack.pop() #탐사 내용 제거 
+
+dfs(0,n,m)
+
+
+
+
+import sys          #Python 내부 함수 itertools의 permutations를 이용해서 중복하지 않는 순열을 찾아주는 간단한 방법
+from itertools import permutations
+N, M = map(int, sys.stdin.readline().split())
+P = permutations(range(1, N+1), M)  # iter(tuple)
+for i in P:
+    print(' '.join(map(str, i)))  # tuple -> str
