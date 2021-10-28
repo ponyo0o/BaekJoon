@@ -1,0 +1,22 @@
+n,m=map(int,input().split())
+
+stack=[]
+
+def dfs(depth,n,m):
+    if depth==m:      #len(stack)==m 이랑 같은말.
+        print(' '.join(map(str,stack)))
+        return
+    for i in range(1,n+1):
+        stack.append(i)
+        dfs(depth+1,n,m)
+        stack.pop()
+dfs(0,n,m)
+
+
+
+from itertools import product        #tertools 라이브러리의 product 함수를 활용
+N,M=map(int,input().split()) 
+numlist=map(str,range(1,N+1)) 
+setlist=sorted(list(product(numlist,repeat=M))) 
+print('\n'.join(list(map(' '.join,setlist))))
+
