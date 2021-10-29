@@ -1,0 +1,26 @@
+import sys
+
+#이미 놓여진 퀸과 같은 열이거나 대각선 상에 있는지 확인
+#(행끼리의 차==열끼리 차의 절대값)이 True면 대각선 상에 있는것임
+def f(x):
+    for i in range(x):
+        if li[x]==li[i] or abs(li[x]-li[i])== x-i:
+            return False
+    return True
+
+def N_queen(x):
+    global count #전역변수 설정
+    if x==n: #마지막까지 탐색 완료했으면
+        count+=1 #값 증가
+    else:
+        for i in range(n):
+            li[x]=i  #(x,i)에 퀸 올리기 
+            if f(x):  #퀸 놓기 조건에 맞다면 
+                N_queen(x+1) #다음 행으로 넘어가기
+
+
+n=int(sys.stdin.readline())
+li=[0]*n   #인덱스 번호== 행, 인덱스 값 == 열
+count=0 
+N_queen(0)
+print(count)
