@@ -2,11 +2,11 @@ import sys
 from collections import deque
 
 n,m,v=map(int,sys.stdin.readline().split())   # N:정점개수, M:간선개수, V:시작정점 번호
-li=[[0]*(n+1) for i in range(n+1)]        #n+1한 이유는 0번째 인덱스를 사용하지않고  1~4까지를 표현하기위해 
+li=[[0]*(n+1) for i in range(n+1)]       # 인접행렬 생성 (var_N +1 사이즈 만큼 행과 열),  #n+1한 이유는 0번째 인덱스를 사용하지않고  1~4까지를 표현하기위해 
 visited=[0]*(n+1)                  #내가 방문한 점을 또 방문하면 안되니까 visited라는 1차원 행렬을 만들어줍니다.
 
-for i in range(m):
-    a,b=map(int,sys.stdin.readline().split())
+for i in range(m):                 # 인접행렬 세팅 
+    a,b=map(int,sys.stdin.readline().split())       
     li[a][b]=1
     li[b][a]=1
 
