@@ -1,0 +1,24 @@
+import sys
+
+n=int(input())  #컴퓨터 수
+m=int(input())  #연결된 컴퓨터 쌍 수
+
+li=[[0]*(n+1) for i in range(n+1)]    # 인접행렬 생성 (n+1 사이즈 만큼 행과 열),  #n+1한 이유는 0번째 인덱스를 사용하지않고  1~n까지를 표현하기위해 
+visited=[0]*(n+1)     #내가 방문한 점을 또 방문하면 안되니까 visited라는 1차원 행렬을 만들어줍니다.
+
+
+for i in range(m):                 # 인접행렬 세팅 
+    a,b=map(int,sys.stdin.readline().split())
+    li[a][b]=1   #인접한 노드를 연결
+    li[b][a]=1   #쌍방향이기 때문에 반대로도 이어줌 
+
+cnt=[]
+def dfs(x):
+    visited[x]=1         #방문체크
+    cnt.append(x)        #방문한 노드를 cnt에 추가
+    for i in range(1,n+1):
+        if visited[i]==0 and li[x][i]==1:          # 방문하지 않았고, 현재 노드에 인접한 노드 방문시 재귀
+            dfs(i)                  #재귀
+
+dfs(1)  #시작 컴퓨터는 1
+print(len(cnt)-1)     #시작컴퓨터를 제외한 나머지 감염된 컴퓨터 수 이기때문에 cnt의 길이에서 -1 해줌 
